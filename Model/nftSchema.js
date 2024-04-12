@@ -23,10 +23,6 @@ const nftSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  sellerAddress: {
-    type: String,
-    required: true,
-  },
   tokenId: {
     type: String,
     required: true,
