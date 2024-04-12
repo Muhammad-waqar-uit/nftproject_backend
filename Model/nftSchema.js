@@ -6,6 +6,10 @@ const nftSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  price: {
+    type: Number,
+    required: true,
+  },
 
   description: {
     type: String,
@@ -19,12 +23,20 @@ const nftSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  sellerAddress: {
+    type: String,
+    required: true,
+  },
   tokenId: {
     type: String,
     required: true,
   },
   attributes: {
     type: Array,
+  },
+  active: {
+    type: Boolean,
+    required: true,
   },
 });
 

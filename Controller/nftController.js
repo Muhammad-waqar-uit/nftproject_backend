@@ -1,9 +1,9 @@
 const nfts = require("../Model/nftSchema");
 
 exports.nftPost = async (req, res) => {
-  const { title, description, ipfsHash, ownerAddress, tokenId, attributes } =
+  const { title, description, ipfsHash, ownerAddress, tokenId, attributes, txHash } =
     req.body;
-  if (!title || !description || !ipfsHash || !ownerAddress || !tokenId) {
+  if (!title || !description || !ipfsHash || !ownerAddress || !tokenId || !txHash) {
     return res.status(400).json({ error: "All fields are required" });
   }
 
@@ -16,6 +16,8 @@ exports.nftPost = async (req, res) => {
       ownerAddress,
       tokenId,
       attributes,
+      price: 0,
+      txHash
     });
     await nftData.save();
     res.status(200).json(nftData);
