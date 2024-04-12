@@ -27,6 +27,10 @@ const nftSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  txHash: {
+    type: String,
+    required: true,
+  },
   attributes: {
     type: Array,
   }
